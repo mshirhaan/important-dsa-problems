@@ -1,0 +1,19 @@
+function dfs(root) {
+    let stack = [root];
+    let result = [];
+    let node = root;
+
+    while (stack.length) {
+        node = node.left;
+        if (node) {
+            stack.push(node);
+        }
+        while (!node && stack.length) {
+            node = stack.pop();
+            result.push(node.val);
+            node = node.right;
+            if (node) stack.push(node);
+        }
+    }
+    return result;
+}
