@@ -1,0 +1,12 @@
+function dfs(root) {
+    let stack1 = [root];
+    let stack2 = [];
+
+    while(stack1.length) {
+        let node = stack1.pop();
+        stack2.push(node.val);
+        if(node.left) stack1.push(node.left);
+        if(node.right) stack1.push(node.right);
+    }
+    return stack2;
+}
