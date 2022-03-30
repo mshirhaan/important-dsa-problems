@@ -1,15 +1,15 @@
 function dfs(root) {
-    let stack1 = [root];
+    let stack = [root];
     let result = [];
 
-    while(stack1.length) {
-        let node = stack1.pop();
+    while(stack.length) {
+        let node = stack.pop();
         result.push(node.val);
         if(node.right) {
-            stack1.push(node.right);
+            stack.push(node.right);
         }
         if(node.left) {
-            stack1.push(node.left);
+            stack.push(node.left);
         }
     }
     return result;
